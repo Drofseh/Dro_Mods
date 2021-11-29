@@ -1,0 +1,10 @@
+name = "Dro Mods";
+author = "Drofseh";
+description = "Dro Mods - v1.0.0";
+overview = "A collection of small mods made by Drofseh.";
+logo = "logo.paa";
+logoOver = "logo.paa";
+logoSmall = "logo.paa";
+picture = "logo.paa";
+tooltip = "Dro Mods";
+action = "https://github.com/Drofseh/Dro-Mods";
