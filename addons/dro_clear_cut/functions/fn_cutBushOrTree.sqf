@@ -45,7 +45,7 @@ if !((nearestTerrainObjects [ _intersectObj , ["BUSH"], 0]) isEqualTo []) exitWi
     [player,"AinvPknlMstpSlayWrflDnon_medicOther"] remoteExec ["playMove"];
 
     [
-        10,
+        dro_clear_cut_bush_cut_time,
         [_intersectObj],
         {
             (_this select 0 select 0) setDamage 1;
@@ -73,7 +73,7 @@ if !((nearestTerrainObjects [ _intersectObj , ["SMALL TREE"], 0]) isEqualTo [] )
     [player,"AmovPercMstpSnonWnonDnon"] remoteExec ["playMove"];
 
     [
-        15,
+        dro_clear_cut_smallTree_cut_time,
         [_intersectObj],
         {
             (_this select 0 select 0) setDamage 1;
@@ -101,7 +101,7 @@ if !((nearestTerrainObjects [ _intersectObj , ["TREE"], 0]) isEqualTo [] ) exitW
     [player,"AmovPercMstpSnonWnonDnon"] remoteExec ["playMove"];
 
     [
-        30,
+        dro_clear_cut_largeTree_cut_time,
         [_intersectObj],
         {
             (_this select 0 select 0) setDamage 1;

@@ -10,7 +10,7 @@
  * BOOL
  *
  * Example:
- * [player,True] call dro_clear_cut_fnc_canClear
+ * [player,true] call dro_clear_cut_fnc_canClear
  */
 
 params ["_player","_ToolKit"];

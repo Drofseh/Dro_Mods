@@ -12,7 +12,7 @@ class CfgPatches {
 class CfgFunctions {
     class dro_map_share {
         tag = "dro_map_share";
-        file = "\dro_map_share\functions";
+        file = "dro\dro_mods\addons\dro_map_share\functions";
         class functions {
             class viewMap {};
         };

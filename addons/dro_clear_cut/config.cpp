@@ -12,10 +12,16 @@ class CfgPatches {
     };
 };
 
+class Extended_PreInit_EventHandlers {
+    class dro_clear_cut {
+        init = "call compileScript ['dro\dro_mods\addons\dro_clear_cut\XEH_preInit.sqf', true]";
+    };
+};
+
 class CfgFunctions {
     class dro_clear_cut {
         tag = "dro_clear_cut";
-        file = "\dro_clear_cut\functions";
+        file = "dro\dro_mods\addons\dro_clear_cut\functions";
         class functions {
             class canClear{};
             class cutGrass{};
