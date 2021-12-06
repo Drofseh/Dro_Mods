@@ -99,76 +99,106 @@ class Display3DENPlace : DisplaySimulated {
 class Display3DENNew : DisplaySimulated {
     class controlsBackground {
         class Background : ctrlStaticBackground {
-            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 - (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 + 10 * (pixelH * pixelGrid * 0.50)";
-            w = "360 * (pixelW * pixelGrid * 0.50)";
-            h = "(safezoneH min (360 * (pixelH * pixelGrid * 0.50))) - (10 + 5) * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 + 10 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "360 * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "(safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) - (10 + 5) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+        };
+        class BackgroundButtons : ctrlStaticFooter {
+            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 + (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 - 2 * (5 + 1) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "360 * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "(5 + 2) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         delete BackgroundWorld;
-        class BackgroundButtons : ctrlStaticFooter {
-            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 + (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 - 2 * (5 + 1) * (pixelH * pixelGrid * 0.50)";
-            w = "360 * (pixelW * pixelGrid * 0.50)";
-            h = "(5 + 2) * (pixelH * pixelGrid * 0.50)";
+        /*
+        class BackgroundWorld : ctrlStaticOverlay {
+            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5) - ((120 - 32) * (pixelW * (pixelGridNoUIScale / 2) * 0.5))";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * ((120 - 32) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(140 - 2) * (pixelW * (pixelGridNoUIScale / 2) * 0.5) - ((120 - 32) * (pixelW * (pixelGridNoUIScale / 2) * 0.5))";
+            h = "(120 - 2) * (pixelH * (pixelGridNoUIScale / 2) * 0.5) - ((120 - 32) * (pixelH * (pixelGridNoUIScale / 2) * 0.5))";
         };
+        */
     };
     class controls {
         class Title : ctrlStaticTitle {
-            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 - (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 + 5 * (pixelH * pixelGrid * 0.50)";
-            w = "360 * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 + 5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "360 * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class IslandsBox : ctrlListbox {
-            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5 - 1) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 - (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 + 11 * (pixelH * pixelGrid * 0.50)";
-            w = "(360 * 3/4 - 2) * (pixelW * pixelGrid * 0.50)";
-            h = "(safezoneH min (360 * (pixelH * pixelGrid * 0.50))) - (23 + 5 * 3 + 3) * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 + 11 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(360 * 3/4 - 33) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "(safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) - (24) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
+        class NameBackground : ctrlStatic {
+            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5) - (120 * (pixelW * (pixelGridNoUIScale / 2) * 0.5))";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 + 11 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(120 * (pixelW * (pixelGridNoUIScale / 2) * 0.5))";
+            h = "2 * 5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+        };
+        class Name : ctrlStatic {
+            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5) - (120 * (pixelW * (pixelGridNoUIScale / 2) * 0.5))";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 + 11 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(120 * (pixelW * (pixelGridNoUIScale / 2) * 0.5))";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+        };
+        class Author : ctrlStatic {
+            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5) - (120 * (pixelW * (pixelGridNoUIScale / 2) * 0.5))";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 + 16 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(120 * (pixelW * (pixelGridNoUIScale / 2) * 0.5))";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+        };
+        class IslandPanorama : ctrlStaticPicture {
+            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5) - (120 * (pixelW * (pixelGridNoUIScale / 2) * 0.5))";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 + 21 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(120 * (pixelW * (pixelGridNoUIScale / 2) * 0.5))";
+            h = "(120 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))";
+        };
+
         delete World;
         delete WorldLat;
         delete WorldLng;
-        class NameBackground : ctrlStatic {
-            x = "((getResolution select 2) * 0.5 * pixelW) + (240 * 0.5) * (pixelW * pixelGrid * 0.50) - ((120 - 32) * (pixelW * pixelGrid * 0.50))";
-            y = "0.5 - (120 * 0.5 - 10) * (pixelH * pixelGrid * 0.50)";
-            w = "((120 - 32) * (pixelW * pixelGrid * 0.50))";
-            h = "2 * 5 * (pixelH * pixelGrid * 0.50)";
+        /*
+        class World : ctrlStaticPicture {
+            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5) - ((120 - 32) * (pixelW * (pixelGridNoUIScale / 2) * 0.5))";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * ((120 - 32) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(140 - 2) * (pixelW * (pixelGridNoUIScale / 2) * 0.5) - ((120 - 32) * (pixelW * (pixelGridNoUIScale / 2) * 0.5))";
+            h = "(120 - 2) * (pixelH * (pixelGridNoUIScale / 2) * 0.5) - ((120 - 32) * (pixelH * (pixelGridNoUIScale / 2) * 0.5))";
         };
-        class Name : ctrlStatic {
-            x = "((getResolution select 2) * 0.5 * pixelW) + (240 * 0.5) * (pixelW * pixelGrid * 0.50) - ((120 - 32) * (pixelW * pixelGrid * 0.50))";
-            y = "0.5 - (120 * 0.5 - 10) * (pixelH * pixelGrid * 0.50)";
-            w = "((120 - 32) * (pixelW * pixelGrid * 0.50))";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+        class WorldLng : ctrlStatic {
+            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5) - ((120 - 32) * (pixelW * (pixelGridNoUIScale / 2) * 0.5))";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * ((120 - 32) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(140 - 2) * (pixelW * (pixelGridNoUIScale / 2) * 0.5) - ((120 - 32) * (pixelW * (pixelGridNoUIScale / 2) * 0.5))";
+            h = "(120 - 2) * (pixelH * (pixelGridNoUIScale / 2) * 0.5) - ((120 - 32) * (pixelH * (pixelGridNoUIScale / 2) * 0.5))";
         };
-        class Author : ctrlStatic {
-            x = "((getResolution select 2) * 0.5 * pixelW) + (240 * 0.5) * (pixelW * pixelGrid * 0.50) - ((120 - 32) * (pixelW * pixelGrid * 0.50))";
-            y = "0.5 - (120 * 0.5 - 10 - 5) * (pixelH * pixelGrid * 0.50)";
-            w = "((120 - 32) * (pixelW * pixelGrid * 0.50))";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+        class WorldLat : WorldLng {
+            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5) - ((120 - 32) * (pixelW * (pixelGridNoUIScale / 2) * 0.5))";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * ((120 - 32) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(140 - 2) * (pixelW * (pixelGridNoUIScale / 2) * 0.5) - ((120 - 32) * (pixelW * (pixelGridNoUIScale / 2) * 0.5))";
+            h = "(120 - 2) * (pixelH * (pixelGridNoUIScale / 2) * 0.5) - ((120 - 32) * (pixelH * (pixelGridNoUIScale / 2) * 0.5))";
         };
-        class IslandPanorama : ctrlStaticPicture {
-            x = "((getResolution select 2) * 0.5 * pixelW) + (240 * 0.5) * (pixelW * pixelGrid * 0.50) - ((120 - 32) * (pixelW * pixelGrid * 0.50))";
-            y = "0.5 - (120 * 0.5 - 10 - 2 * 5) * (pixelH * pixelGrid * 0.50)";
-            w = "((120 - 32) * (pixelW * pixelGrid * 0.50))";
-            h = "((120 - 32) * (pixelH * pixelGrid * 0.50))";
-        };
+        */
+
         class ButtonContinue : ctrlButtonOK {
-            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 50 - 2) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 + (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 - (2 * 5 + 1) * (pixelH * pixelGrid * 0.50)";
-            w = "25 * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 50 - 2) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 + (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 - (2 * 5 + 1) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "25 * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class ButtonPurchase : ctrlShortcutButtonSteam {
-            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 60 - 2) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 + (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 - (2 * 5 + 1) * (pixelH * pixelGrid * 0.50)";
-            w = "35 * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 60 - 2) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 + (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 - (2 * 5 + 1) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "35 * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class ButtonCancel : ctrlButtonCancel {
-            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 25 - 1) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 + (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 - (2 * 5 + 1) * (pixelH * pixelGrid * 0.50)";
-            w = "25 * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 25 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 + (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 - (2 * 5 + 1) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "25 * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
     };
 };
@@ -176,108 +206,108 @@ class Display3DENNew : DisplaySimulated {
 class Display3DENSave {
     class ControlsBackground {
         class Background : ctrlStaticBackground {
-            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 - (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 + 10 * (pixelH * pixelGrid * 0.50)";
-            w = "360 * (pixelW * pixelGrid * 0.50)";
-            h = "(safezoneH min (360 * (pixelH * pixelGrid * 0.50))) - (10 + 5) * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 + 10 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "360 * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "(safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) - (10 + 5) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class BackgroundFilter : ctrlStatic {
-            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 1/4 - 1) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 - (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 + (12 + 5) * (pixelH * pixelGrid * 0.50)";
-            w = "(360 * 3/4 - 2) * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 1/4 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 + (12 + 5) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(360 * 3/4 - 2) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class BackgroundFiles : ctrlStaticOverlay {
-            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 1/4 - 1) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 - (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 + (12 + 5) * (pixelH * pixelGrid * 0.50)";
-            w = "(360 * 3/4 - 2) * (pixelW * pixelGrid * 0.50)";
-            h = "(safezoneH min (360 * (pixelH * pixelGrid * 0.50))) - (23 + 5 * 3 + 3) * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 1/4 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 + (12 + 5) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(360 * 3/4 - 2) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "(safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) - (23 + 5 * 3 + 3) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class BackgroundButtons : ctrlStaticFooter {
-            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 + (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 - 2 * (5 + 1) * (pixelH * pixelGrid * 0.50)";
-            w = "360 * (pixelW * pixelGrid * 0.50)";
-            h = "(5 + 2) * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 + (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 - 2 * (5 + 1) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "360 * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "(5 + 2) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
     };
     class Controls {
         class Title : ctrlStaticTitle {
-            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 - (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 + 5 * (pixelH * pixelGrid * 0.50)";
-            w = "360 * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 + 5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "360 * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class Search : ctrlEdit {
-            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 1/4 - 5 - 1) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 - (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 + (11) * (pixelH * pixelGrid * 0.50)";
-            w = "(360 / 4) * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 1/4 - 5 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 + (11) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(360 / 4) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class SearchButton : ctrlButtonSearch {
-            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 1/2 - 5 - 1) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 - (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 + (11) * (pixelH * pixelGrid * 0.50)";
-            w = "5 * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 1/2 - 5 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 + (11) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "5 * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class Folders : ctrlTree {
-            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5 - 1) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 - (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 + 11 * (pixelH * pixelGrid * 0.50)";
-            w = "(360 * 1/4 - 1) * (pixelW * pixelGrid * 0.50)";
-            h = "(safezoneH min (360 * (pixelH * pixelGrid * 0.50))) - (23 + 2 * 5 + 2) * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 + 11 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(360 * 1/4 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "(safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) - (23 + 2 * 5 + 2) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class Files : ctrlListNBox {
-            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 1/4 - 1) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 - (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 + (12 + 5 * 2) * (pixelH * pixelGrid * 0.50)";
-            w = "(360 * 3/4 - 2) * (pixelW * pixelGrid * 0.50)";
-            h = "(safezoneH min (360 * (pixelH * pixelGrid * 0.50))) - (23 + 4 * 5 + 3) * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 1/4 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 + (12 + 5 * 2) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(360 * 3/4 - 2) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "(safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) - (23 + 4 * 5 + 3) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class Filter : ctrlListNBox {
-            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 1/4 - 1) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 - (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 + (12 + 5) * (pixelH * pixelGrid * 0.50)";
-            w = "(360 * 3/4 - 2) * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 1/4 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 - (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 + (12 + 5) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(360 * 3/4 - 2) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class NameText : ctrlStatic {
-            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5 - 1) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 + (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 - (4 * 5 + 3) * (pixelH * pixelGrid * 0.50)";
-            w = "(360 * 1/4 - 1) * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 + (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 - (4 * 5 + 3) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(360 * 1/4 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class Name : ctrlEdit {
-            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 1/4 - 1) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 + (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 - (4 * 5 + 3) * (pixelH * pixelGrid * 0.50)";
-            w = "(360 * 3/4 - 2) * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 1/4 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 + (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 - (4 * 5 + 3) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(360 * 3/4 - 2) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class BinarizeText : ctrlStatic {
-            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5 - 1) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 + (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 - (3 * 5 + 3) * (pixelH * pixelGrid * 0.50)";
-            w = "(360 * 1/4 - 1) * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 0.5 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 + (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 - (3 * 5 + 3) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "(360 * 1/4 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class Binarize : ctrlCheckbox {
-            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 1/4) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 + (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 - (3 * 5 + 3) * (pixelH * pixelGrid * 0.50)";
-            w = "5 * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) - (360 * 1/4) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 + (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 - (3 * 5 + 3) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "5 * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class ButtonOK : ctrlButtonOK {
-            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 50 - 2) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 + (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 - (2 * 5 + 1) * (pixelH * pixelGrid * 0.50)";
-            w = "25 * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 50 - 2) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 + (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 - (2 * 5 + 1) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "25 * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class ButtonPurchase : ctrlShortcutButtonSteam {
-            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 60 - 2) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 + (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 - (2 * 5 + 1) * (pixelH * pixelGrid * 0.50)";
-            w = "35 * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 60 - 2) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 + (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 - (2 * 5 + 1) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "35 * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
         class ButtonCancel : ctrlButtonCancel {
-            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 25 - 1) * (pixelW * pixelGrid * 0.50)";
-            y = "0.5 + (safezoneH min (360 * (pixelH * pixelGrid * 0.50))) * 0.5 - (2 * 5 + 1) * (pixelH * pixelGrid * 0.50)";
-            w = "25 * (pixelW * pixelGrid * 0.50)";
-            h = "5 * (pixelH * pixelGrid * 0.50)";
+            x = "((getResolution select 2) * 0.5 * pixelW) + (360 * 0.5 - 25 - 1) * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            y = "0.5 + (safezoneH min (360 * (pixelH * (pixelGridNoUIScale / 2) * 0.5))) * 0.5 - (2 * 5 + 1) * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
+            w = "25 * (pixelW * (pixelGridNoUIScale / 2) * 0.5)";
+            h = "5 * (pixelH * (pixelGridNoUIScale / 2) * 0.5)";
         };
     };
 };
